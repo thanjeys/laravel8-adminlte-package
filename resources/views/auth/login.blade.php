@@ -7,6 +7,7 @@
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="{{ asset('images/icon.png') }} ">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
@@ -18,7 +19,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a href="#"><img src="{{ asset('images/logo_loanzzone.png') }}"></a>
     </div>
     <!-- /.login-logo -->
 
@@ -75,12 +76,12 @@
                 </div>
             </form>
 
-            <p class="mb-1">
+            {{-- <p class="mb-1">
                 <a href="{{ route('password.request') }}">I forgot my password</a>
             </p>
             <p class="mb-0">
                 <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
-            </p>
+            </p> --}}
         </div>
         <!-- /.login-card-body -->
     </div>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -37,4 +39,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // public function authenticated(Request $request, $user)
+    // {
+    //     if (!$user->is_admin) {
+    //         Auth::logout();
+    //         return redirect()->back()->withErrors(['email' => 'Account not activate, please try again later or contact support.'])->withInput();
+    //     }
+    // }
 }

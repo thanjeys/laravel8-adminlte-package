@@ -1,6 +1,16 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
+use App\Http\Livewire\ {
+    BankComponent,
+    UserComponent,
+    LeadsComponent,
+    FreelancerComponent
+};
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +23,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Auth::routes([
+    'register' => true, // register
+    'reset' => false,
+    'verify' => false,
+  ]);
+
+Route::redirect('/', 'login');
+
+Route::middleware('auth')->group(function(){
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('sanctioned-report', [HomeController::class, 'getLoanSanctionedOfMonth'])->name('sanctioned.report');
+    Route::get('leads', LeadsComponent::class)->name('leads');
+    Route::get('users', UserComponent::class)->name('users')->middleware('can:isAdmin');
+    Route::get('banks', BankComponent::class)->name('banks');
+    Route::get('freelancers', FreelancerComponent::class)->name('freelancers');
+
+    Route::get('/changePassword',[ProfileController::class, 'showChangePasswordGet'])->name('changePasswordGet');
+    Route::post('/changePassword',[ProfileController::class, 'changePasswordPost'])->name('changePasswordPost');
+
+    Route::view('bankcategory', 'bankcategory')->name('bankcategory');
+    Route::view('bankcategory-upload', 'bankcategory-upload')->name('bankcategory-upload');
+
+
+
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+
