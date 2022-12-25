@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Bank;
 use App\Models\Lead;
+=======
+use App\Models\Article;
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
     /**
      * Show the application dashboard.
      *
@@ -26,6 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         // Administrator
 
         if (auth()->user()->is_admin) {
@@ -101,5 +97,15 @@ class HomeController extends Controller
         }
 
         return view('sanctioned-report', compact('all_report'));
+=======
+        $articles = Article::with(['category', 'tags'])->latest()->paginate(2);
+        return view('articles', compact('articles'));
+    }
+
+    public function article($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('article_detail', compact('article'));
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
     }
 }

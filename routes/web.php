@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
@@ -11,6 +12,12 @@ use App\Http\Livewire\ {
 };
 
 
+=======
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +30,7 @@ use App\Http\Livewire\ {
 |
 */
 
+<<<<<<< HEAD
 
 Auth::routes([
     'register' => true, // register
@@ -49,7 +57,28 @@ Route::middleware('auth')->group(function(){
 
 
 
+=======
+Route::get('/', [HomeController::class, 'index']);
+Route::get('article/{id}', [HomeController::class, 'article'])->name('article');
+Route::view('/about', 'about')->name('about');
+
+Auth::routes([
+    'register' => false,
+]);
+
+
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::resource('categories', CategoryController::class);
+    Route::resource('tags', TagController::class);
+    Route::resource('articles', ArticleController::class);
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
 });
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51

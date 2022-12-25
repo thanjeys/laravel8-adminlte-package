@@ -80,8 +80,13 @@
                 <a href="{{ route('password.request') }}">I forgot my password</a>
             </p>
             <p class="mb-0">
+<<<<<<< HEAD
                 <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
             </p> --}}
+=======
+                {{-- <a href="{{ route('register') }}" class="text-center">Register a new membership</a> --}}
+            </p>
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
         </div>
         <!-- /.login-card-body -->
     </div>

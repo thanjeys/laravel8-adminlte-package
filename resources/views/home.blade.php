@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.app')
 
 @section('content')
@@ -72,3 +73,7 @@
 
 </div>
 @endsection
+=======
+        <h2 class="text-black-50">Welcome to site</h2>
+   
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51

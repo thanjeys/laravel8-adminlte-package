@@ -40,14 +40,23 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+<<<<<<< HEAD
                     {{-- <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
                          class="user-image img-circle elevation-2" alt="User Image"> --}}
+=======
+                    <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png"
+                         class="user-image img-circle elevation-2" alt="User Image">
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
                     <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
+<<<<<<< HEAD
                         {{-- <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
+=======
+                        <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png"
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
                              class="img-circle elevation-2"
                              alt="User Image"> --}}
                         <p>
@@ -78,9 +87,11 @@
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
             @yield('content')
-        </section>
     </div>
 
     <!-- Main Footer -->
@@ -88,7 +99,11 @@
         <div class="float-right d-none d-sm-block">
 
         </div>
+<<<<<<< HEAD
         <strong>Copyright &copy; {{ date('Y')}} Loanzzones.</strong> All rights
+=======
+        <strong>Copyright &copy; 2022 <a href="https://adminlte.io">Laravel Beginner Challenge</a>.</strong> All rights
+>>>>>>> 0023d8cc7e91667d0dc8c6f56aa46ab09d9e2e51
         reserved.
     </footer>
 </div>
